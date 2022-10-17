@@ -1,7 +1,8 @@
 import { Link, NavLink } from "@remix-run/react";
 import { BiShoppingBag } from "react-icons/bi";
-
+import { useSelector, useDispatch } from "react-redux";
 export default function Navbar() {
+  const { cart, user } = useSelector((state) => ({ ...state }));
   const links = [
     {
       label: "Home",
@@ -41,7 +42,7 @@ export default function Navbar() {
           to="/checkout"
           className="inline-flex items-center space-x-1 transition-colors duration-300"
         >
-          <BiShoppingBag className="text-xl" /> <span>0</span>
+          <BiShoppingBag className="text-xl" /> <span>{cart.length}</span>
         </NavLink>
       </div>
     </nav>
