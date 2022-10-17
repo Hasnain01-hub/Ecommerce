@@ -2,7 +2,7 @@
 const locale = "en-US";
 
 // TODO: Allow users to select region currency (usd | eur)
-const regionCurrency = "usd";
+const regionCurrency = "eur";
 
 export function formatPrice(variant) {
   const price = variant.prices.find(
