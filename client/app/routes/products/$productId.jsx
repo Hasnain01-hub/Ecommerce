@@ -2,7 +2,8 @@ import { useState } from "react";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { BiShoppingBag } from "react-icons/bi";
-
+import _ from "lodash";
+import { useDispatch } from "react-redux";
 import { createClient } from "~/utils/client";
 import { formatPrice } from "~/utils/prices";
 
@@ -41,6 +42,40 @@ export default function ProductRoute() {
   const handleImageChange = (id) => {
     setImage(product.images.find((img) => img.id === id));
   };
+
+  const [tooltip, setTooltip] = useState("Click to add");
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        // create cart array
+        let cart = [];
+        if (typeof window !== "undefined") {
+            // if cart is in local storage GET it
+            if (localStorage.getItem("cart")) {
+                cart = JSON.parse(localStorage.getItem("cart"));
+            }
+            // push new service to cart
+            cart.push({
+                ...product,
+                count: 1,
+            });
+            // remove duplicates
+            let unique = _.uniqWith(cart, _.isEqual);
+            // save to local storage
+            // console.log('unique', unique)
+            localStorage.setItem("cart", JSON.stringify(unique));
+            // show tooltip
+            setTooltip("Added");
+            //add to redux store
+            dispatch({
+                type: "ADD_TO_CART",
+                payload: unique,
+            })
+          
+            console.log(cart);
+        }
+    };
 
   return (
     <>
@@ -109,7 +144,7 @@ export default function ProductRoute() {
           <div>
             <button className="inline-flex items-center px-4 py-2 font-semibold text-gray-200 bg-gray-700 rounded hover:text-white hover:bg-gray-900">
               <BiShoppingBag className="mr-2 text-lg" />{" "}
-              <span>Add to Cart</span>
+              <button onClick={handleAddToCart}>Add to Cart</button>
             </button>
           </div>
           <div>

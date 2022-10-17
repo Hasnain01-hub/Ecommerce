@@ -6,6 +6,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './reducers';
 
 import Layout from "./layouts";
 
@@ -24,7 +28,10 @@ export function meta() {
 }
 
 export default function App() {
+const store = createStore(rootReducer, composeWithDevTools());
+
   return (
+  <Provider store={store}>
     <Document>
       <Layout>
         <Outlet />
@@ -33,6 +40,7 @@ export default function App() {
         <LiveReload />
       </Layout>
     </Document>
+    </Provider>
   );
 }
 

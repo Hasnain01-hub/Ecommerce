@@ -1,4 +1,4 @@
-# Custom endpoint
+# Custom endpoints
 
 You may define custom endpoints by putting files in the `/api` directory that export functions returning an express router.
 ```js
