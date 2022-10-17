@@ -15,7 +15,8 @@ const checkout = ({ history }) => {
     // }, 0);
     var sum =0;
     cart.map((item) => {
-      sum += item.variants[0]['prices'][0]['amount'];
+      var values=item.variants[0]['prices'][0]['amount']*item.count;
+        sum +=values ;
       console.log(item.variants[0]['prices'][0]['amount']);
     });
     return sum/ 100;
