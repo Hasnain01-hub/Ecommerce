@@ -25,7 +25,7 @@ export default function ProductsIndexRoute() {
 // })
   return (
     <>
-    {console.log(products)}
+    
     <div className="w-full p-4 my-8">
       <h1 className="text-center">Latest Arrivals</h1>
       <center><input onChange={(e)=>setsearch(e.target.value)} type="text" placeholder="Search" style={{"border":'1px solid black', "borderRadius":"10px","padding":'11px',"margin":'10px',"fontFamily":"sans-serif"}}/></center>

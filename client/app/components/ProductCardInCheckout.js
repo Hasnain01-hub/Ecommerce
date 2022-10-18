@@ -72,7 +72,7 @@ const ProductCardInCheckout = ({ s }) => {
           </div>
         </td>
         <td>{s.title}</td>
-        <td>Rs.{s.variants[0]["prices"][0]["amount"] / 100}</td>
+        <td>€.{s.variants[0]["prices"][0]["amount"] / 100}</td>
         <td>{s.brands}</td>
         <td className="text-center">
           <input

@@ -66,7 +66,7 @@ const checkout = ({ history }) => {
         <div className="col-md-4">
           <h4>Summary</h4>
           <hr />
-          Total: <b>Rs.{getTotal()}</b>
+          Total: <b>€.{getTotal()}</b>
           <hr />
           {user ? (
             <>
