@@ -5,7 +5,8 @@ import { useDispatch } from "react-redux";
 import { CloseOutlined } from "@ant-design/icons";
 
 const ProductCardInCheckout = ({ s }) => {
-  const handleQuantityChange = (e) => {
+  // const [update,setupdate]=React.useState([{}])
+  const handleQuantityChange = (e,id) => {
     let count = e.target.value < 1 ? 1 : e.target.value;
 
     let cart = [];
@@ -16,7 +17,7 @@ const ProductCardInCheckout = ({ s }) => {
       }
 
       cart.map((service, i) => {
-        if (service._id === s._id) {
+        if (service.id === id) {
           cart[i].count = count;
         }
       });
@@ -54,6 +55,8 @@ const ProductCardInCheckout = ({ s }) => {
   let dispatch = useDispatch();
 
   return (
+    <>
+    {console.log(s._id)}
     <tbody>
       <tr>
         <td>
@@ -77,7 +80,7 @@ const ProductCardInCheckout = ({ s }) => {
             type="number"
             className="form-control"
             value={s.count}
-            onChange={handleQuantityChange}
+            onChange={(e)=>handleQuantityChange(e,s.id)}
           />
         </td>
         <td className="text-center">
@@ -88,6 +91,7 @@ const ProductCardInCheckout = ({ s }) => {
         </td>
       </tr>
     </tbody>
+    </>
   );
 };
 
