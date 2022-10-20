@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 export default function Navbar() {
   const { cart, user } = useSelector((state) => ({ ...state }));
   const links = [
+    // {
+    //   label: "Home",
+    //   url: "/",
+    // },
     {
       label: "Home",
       url: "/",
-    },
-    {
-      label: "Products",
-      url: "/products",
     },
     {
       label: "About",
@@ -23,7 +23,7 @@ export default function Navbar() {
       {/* Site Logo */}
       <div className="font-mono text-3xl font-extrabold uppercase">
         <Link to="/">
-          <img className="w-28" src="/logo.svg" alt="Medusa" />
+          <span style={{display:"inline-flex",alignItems:"center"}}><img className="w-28" src="/ecommerce.png" alt="ecommerce" style={{width:"60px"}} />E-Commerce</span>
         </Link>
       </div>
 
