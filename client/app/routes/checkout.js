@@ -23,7 +23,6 @@ const checkout = ({ history }) => {
   };
   const placeorder = () => {
     if (confirm("Are you sure you want to place order?")) {
-      
       localStorage.setItem("cart", JSON.stringify([]));
       dispatch({
         type: "REMOVE_FROM_CART",
@@ -53,7 +52,6 @@ const checkout = ({ history }) => {
 
   return (
     <>
-    {console.log(cart[0])}
       <div
         className="container-fluid pt-2"
         initial={{ opacity: 0 }}
@@ -80,17 +78,23 @@ const checkout = ({ history }) => {
             <hr />
           </div>
         </div>
-        {cart.length>0?<button
-          style={{
-            border: "1px solid black",
-            padding: "10px",
-            borderRadius: "15px",
-            margin: "10px 0",
-          }}
-          onClick={placeorder}
-        >
-          Place Order
-        </button>:<></>}
+        {cart.length > 0 ? (
+          <button
+            style={{
+              border: "1px solid gray",
+              padding: "10px",
+              borderRadius: "5px",
+              background: "#C341E3",
+              color: "#fff",
+              margin: "10px 0",
+            }}
+            onClick={placeorder}
+          >
+            Place Order
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

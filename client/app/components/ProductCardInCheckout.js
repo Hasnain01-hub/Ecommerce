@@ -6,7 +6,7 @@ import { CloseOutlined } from "@ant-design/icons";
 
 const ProductCardInCheckout = ({ s }) => {
   // const [update,setupdate]=React.useState([{}])
-  const handleQuantityChange = (e,id) => {
+  const handleQuantityChange = (e, id) => {
     let count = e.target.value < 1 ? 1 : e.target.value;
 
     let cart = [];
@@ -56,41 +56,63 @@ const ProductCardInCheckout = ({ s }) => {
 
   return (
     <>
-    {console.log(s._id)}
-    <tbody>
-      <tr>
-        <td>
-          <div style={{ width: "100px", height: "auto" }}>
-            {s.images.length ? (
-              <ModalImage small={s.images[0].url} large={s.images[0].url} />
-            ) : (
-              <ModalImage
-                small="https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png"
-                large="https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png"
-              />
-            )}
-          </div>
-        </td>
-        <td>{s.title}</td>
-        <td>€.{s.variants[0]["prices"][0]["amount"] / 100}</td>
-        <td>{s.brands}</td>
-        <td className="text-center">
-          <input
-            
-            type="number"
-            className="form-control"
-            value={s.count}
-            onChange={(e)=>handleQuantityChange(e,s.id)}
-          />
-        </td>
-        <td className="text-center">
-          <CloseOutlined
-            onClick={handleRemove}
-            className="text-danger pointer"
-          />
-        </td>
-      </tr>
-    </tbody>
+      <tbody>
+        <tr>
+          <td>
+            <div style={{ width: "100px", height: "auto" }}>
+              {s.images.length ? (
+                <img
+                  src={s.images[0].url}
+                  style={{ borderRadius: "20px", padding: "15px" }}
+                />
+              ) : (
+                <ModalImage
+                  small="https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png"
+                  large="https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png"
+                />
+              )}
+            </div>
+          </td>
+          <td>&nbsp;{s.title}</td>
+          <td
+            style={{
+              color: "#C341E3",
+              fontWeight: "bold",
+              width: "auto",
+              textAlign: "center",
+            }}
+          >
+            €.{s.variants[0]["prices"][0]["amount"] / 100}
+          </td>
+          <td>{s.brands}</td>
+          <td className="text-center">
+            <input
+              type="number"
+              className="form-control"
+              value={s.count}
+              onChange={(e) => handleQuantityChange(e, s.id)}
+              style={{
+                height: "35px",
+                paddingLeft: "10px",
+                borderRadius: "5px",
+                outline: "none",
+              }}
+            />
+          </td>
+          <td className="text-center">
+            <CloseOutlined
+              style={{
+                background: "#C341E3",
+                padding: "10px",
+                color: "#fff",
+                borderRadius: "5px",
+              }}
+              onClick={handleRemove}
+              className="pointer"
+            />
+          </td>
+        </tr>
+      </tbody>
     </>
   );
 };

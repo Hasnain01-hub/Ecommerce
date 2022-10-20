@@ -1,8 +1,10 @@
 node_modules
-
+my-medusa-store/
 /.cache
 /build
 /public/build
 .env
+.gitignore
 
 /app/styles/app.css
+
