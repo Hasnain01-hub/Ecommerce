@@ -19,24 +19,15 @@
 This is a complete eCommerce app built with Medusa.js, Next.js, Tailwind.
 
 We have built an eCommerce Web App 
-We were planning to build a swag store for our open source project called refine.
+The basic plan for creation of the project was to create a online store for user convenient using medusa.
 
 We had two options when it came to building this shop.
 
-The first option was to deploy a ready-made solution like Shopify, and the second was to create a custom solution.
-
-Since refine can be used to build eCommerce storefronts with SSR support, we started looking for Headless eCommerce solutions.
-During this process, we met with the Medusa, and we decided that the solution offered by Medusajs fit us quite well. 
-Starting from this, we decided to use the Medusa commerce API and built the storefront app with refine and Next.js. 
+A website that allows people to buy  physical clothes over the internet rather than at a brick-and-mortar location. Through an e-commerce website, a business can process orders, accept payments, manage shipping and logistics, and provide customer service
  
 In that way, we could share complete eCommerce store solutions with the open source community. Also, it helps us to test our framework with a real-world use case.
 
-We deployed our Medusa commerce API fastly without pain. First, we deployed our admin interface and created products, collections, and other stuff. 
-For the UI, we used [Vercel's eCommerce template](https://demo.vercel.store/). Since there is no payment step involved in Vercel's eCommerce template, we took advantage of the (nextjs-starter-medusa)[https://github.com/medusajs/nextjs-starter-medusa] for checkout and account features.
-
-So basically, we built a complete eCommerce storefront by combining Vercel's eCommerce template with nextjs-starter-medusa.
-
-Currently, we are using this store and have already processed real shopping transactions with credit cards and gift codes. 
+So basically, we built a complete eCommerce storefront by our own eCommerce template with nextjs-starter-medusa.
 
  The app includes the following features:
 - Authentication & Authorization
