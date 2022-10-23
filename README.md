@@ -1,7 +1,7 @@
-# Medusa Store
+# Medusa Ecommerce Store
 
 
-<!-- ![Screenshot](./cover-image.jpg) -->
+<!-- ![Screenshot](./preview.gif) -->
 
 
 ## About
@@ -11,7 +11,7 @@
 * Hasnain Sayyed - [GitHub](https://github.com/refinedev/refine) - [LinkedIn](https://twitter.com/refine_dev)
 * Adil Khatri  -  [GitHub](https://github.com/adil-khatri) - [LinkedIn](https://twitter.com/refine_dev)
 * Ronak Lala  -  [GitHub](https://github.com/adil-khatri) - [LinkedIn](https://twitter.com/refine_dev)
-* Om Jadhav  -  [GitHub](https://github.com/adil-khatri) - [LinkedIn](https://twitter.com/refine_dev)
+* Om Jadhav  -  [GitHub](https://github.com/omjadhav3714) - [LinkedIn](https://www.linkedin.com/in/om-jadhav-494553209/)
 
 
 ### Description
