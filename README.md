@@ -44,9 +44,6 @@ Currently, we are using this store and have already processed real shopping tran
 - Account information pages
 - Product detail
 - Shopping cart
-- Payment with Stripe
-- Gift Code feature
-- Email send and verification
 
 ### Preview
 
